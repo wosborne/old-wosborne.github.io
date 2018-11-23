@@ -40,6 +40,27 @@ a:visited {
     color:black;
 }
 
+a:link{
+    text-decoration: none;
+    color:black;
+}
+a:visited{
+    text-decoration: none;
+    color:black;
+}
+a:hover{
+    text-decoration: none;
+    color:red;
+}
+a:focus{
+    text-decoration: none;
+    color:black;
+}
+a:active{
+    text-decoration: none;
+    color:black;
+}
+
 #chillipharm {
     text-align: center;
     background-color: red;
