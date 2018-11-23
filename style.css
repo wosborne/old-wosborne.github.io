@@ -19,7 +19,7 @@ h1 {
     position: relative;
     float: right;
     bottom: 5px;
-    
+
 }
 
 h2 {
@@ -60,7 +60,7 @@ a:active{
     text-align: center;
     background-color: red;
     border-radius: 3px;
-    padding: 1px 4px 2px 4px;
+    padding: 1px 4px 1px 4px;
     color: white;
     font-size: 12px;
     font-family: 'Nunito', sans-serif;
@@ -75,11 +75,3 @@ a:active{
     margin-left: 5px;
     margin-top: 200px;
 }
-
-
-
-/*
-font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto Condensed', sans-serif;
-font-family: 'Monoton', cursive;
-*/
