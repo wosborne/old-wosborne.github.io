@@ -139,13 +139,16 @@
     background-size: .25rem .25rem;
   }
   .card-container {
-    @apply bg-[#EBBFB5] pr-3 pb-3 border-2 border-[#272727] rounded-lg relative z-10;
+    @apply bg-pale-orange pb-3 border-2 border-grey rounded-lg relative z-10 overflow-hidden;
+  }
+  .card-image-area {
+    @apply h-40 w-full flex;
   }
   .card-text-area {
     @apply p-4;
   }
   .card-title {
-    @apply text-2xl font-bold text-[#272727] font-roboto font-bold;
+    @apply text-2xl font-bold text-grey font-roboto font-bold;
   }
   .card-text {
     @apply text-lg text-[#4B4B4B] font-roboto-slab font-normal;
