@@ -446,6 +446,146 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: "Roboto Slab";
+
+  font-style: normal;
+
+  font-display: swap;
+
+  src: url(fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+
+  font-style: normal;
+
+  font-display: swap;
+
+  src: url(fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: normal;
+
+  font-weight: 100;
+
+  src: url(fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: italic;
+
+  font-weight: 100;
+
+  src: url(fonts/Roboto/Roboto-ThinItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: normal;
+
+  font-weight: 300;
+
+  src: url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: italic;
+
+  font-weight: 300;
+
+  src: url(fonts/Roboto/Roboto-LightItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  src: url(fonts/Roboto/Roboto-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  src: url(fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  src: url(fonts/Roboto/Roboto-MediumItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  src: url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: italic;
+
+  font-weight: 700;
+
+  src: url(fonts/Roboto/Roboto-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: normal;
+
+  font-weight: 900;
+
+  src: url(fonts/Roboto/Roboto-Black.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+
+  font-style: italic;
+
+  font-weight: 900;
+
+  src: url(fonts/Roboto/Roboto-BlackItalic.ttf) format('truetype');
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -554,14 +694,160 @@ video {
   --tw-contain-style:  ;
 }
 
-/* @layer utilities {
-  .h-screen {
-    height: 100vh;
-  }
+.mt-\[-4px\] {
+  margin-top: -4px;
 }
 
-@layer components {
-  .bg-orange {
-    @apply background-color: rgb(76 5 25);
-  }
-} */
+.flex {
+  display: flex;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.bg-\[\#4D92D2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 146 210 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#D2654D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 101 77 / var(--tw-bg-opacity));
+}
+
+.bg-\[radial-gradient\(_var\(--tw-gradient-stops\)\)\] {
+  background-image: radial-gradient( var(--tw-gradient-stops));
+}
+
+.from-\[\#272727\] {
+  --tw-gradient-from: #272727 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(39 39 39 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-\[1px\] {
+  --tw-gradient-from-position: 1px;
+}
+
+.to-transparent {
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+
+.to-\[1px\] {
+  --tw-gradient-to-position: 1px;
+}
+
+.bg-\[length\:8px_8px\] {
+  background-size: 8px 8px;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pr-20 {
+  padding-right: 5rem;
+}
+
+.pt-96 {
+  padding-top: 24rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-\[\'Futura\'\] {
+  font-family: 'Futura';
+}
+
+.font-roboto {
+  font-family: Roboto, san-serif;
+}
+
+.font-roboto-mono {
+  font-family: Roboto Mono, monospace;
+}
+
+.font-roboto-slab {
+  font-family: Roboto Slab, serif;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-\[18px\] {
+  font-size: 18px;
+}
+
+.text-\[35px\] {
+  font-size: 35px;
+}
+
+.text-\[36px\] {
+  font-size: 36px;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
