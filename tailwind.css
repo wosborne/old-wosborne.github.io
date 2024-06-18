@@ -159,7 +159,7 @@
     background-size: .25rem .25rem;
   }
   .card-container {
-    @apply bg-pale-orange pb-3 border-4 lg:border-2 border-grey rounded-lg relative z-10 overflow-hidden;
+    @apply bg-pale-orange pb-3 border-4 lg:border-2 border-grey rounded-2xl lg:rounded-lg relative z-10 overflow-hidden;
   }
   .card-image-area {
     @apply max-h-80 lg:max-h-48 w-full flex overflow-hidden border-b-4 lg:border-b-2 border-b-grey;
@@ -219,6 +219,29 @@
   .full-line {
     @apply w-full h-2 lg:w-1 lg:h-1 rounded-full;
   }
+}
 
+@layer components {
+  .upgrade-background {
+    background-image: linear-gradient(120deg, transparent 1.1rem, #272727 1rem),
+      linear-gradient(240deg, transparent 1.1rem, #272727 1rem);
+    background-size: 1rem 1rem;
+
+  }
+  .boost-team-background {
+    background: radial-gradient(transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent),
+      radial-gradient(transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 25px 25px,
+      linear-gradient(#3C4CA0 2px, transparent 2px) 0 -1px,
+      linear-gradient(90deg, #3C4CA0 2px, #e5e5f7 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+  }
+  .battery {
+    background-image: radial-gradient(#272727 .2rem, transparent .2rem);
+    background-size: .7rem .7rem;
+    @apply w-80 h-40 rounded-lg bg-green border-4 border-grey flex items-center justify-center;
+  }
+  .bolt {
+    font-variation-settings: "FILL" 1;
+  }
 }
 
