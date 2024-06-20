@@ -4,6 +4,55 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="output.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+	</script>
+
+	<script type="text/javascript">
+		(function(){
+			emailjs.init({
+				publicKey: "ScSzGITo-Ws8Cakgz",
+			});
+		})();
+	</script>
+
+	<script type="text/javascript">
+
+		function fieldsEmpty() {
+			return document.getElementById('name').value === '' ||
+				document.getElementById('reply_to').value === '' ||
+				document.getElementById('message').value === '';
+		}
+
+		function clearForm() {
+			document.getElementById('name').value = '';
+			document.getElementById('reply_to').value = '';
+			document.getElementById('message').value = '';
+		}
+
+		window.onload = function() {
+			document.getElementById('contact-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+
+				if (fieldsEmpty()) {
+					alert('Please fill in all fields');
+					return;
+				}	
+
+				// these IDs from the previous steps
+				emailjs.sendForm('contact_service', 'contact_form', this)
+					.then(() => {
+						console.log('SUCCESS!');
+						
+						clearForm();
+
+						alert('Email sent successfully');
+					}, (error) => {
+						console.log('FAILED...', error);
+					});
+			});
+		}
+	</script>
 </head>
 
 <body class="bg-pale-orange">
@@ -344,7 +393,7 @@
 		</div>
 	</div>
 
-	<div class="bg-grey pb-20 px-40 lg:px-20 flex flex-col items-center text-white text-center ">
+	<div class="bg-grey pb-20 px-40 lg:px-20 flex flex-col items-center text-white text-center border-b-8 border-blue">
 		<h1 class="font-['Futura'] font-bold text-6xl text-yellow lg:text-4xl my-28 lg:my-20">Why us?</h1>
 
 		<div class="flex flex-col w-full lg:w-[400px]">
@@ -375,6 +424,79 @@
 					We employ extensive testing methodologies to ensure our web applications are robust,
 					reliable, and bug-free.
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-orange pb-20 px-40 lg:px-20 flex flex-col items-center text-white text-center">
+		<div class="flex flex-col w-full lg:w-[400px] gap-10">
+			<h1 class="font-['Futura'] font-bold text-6xl lg:text-4xl my-28 lg:my-20">About us</h1>
+
+			<div class="card-text font-roboto-mono font-thin text-white">
+				We are dedicated to empowering small businesses with people-focused software solutions. Our mission is driven by clarity, quality, and a steadfast commitment to best practices. 
+			</div>
+
+			<div class="card-text font-roboto-mono font-thin text-white">
+				We believe in transparency and clarity throughout the development process. Clear and detailed documentation ensures that every aspect of your software solution is well-documented, making it easy for your team to understand and maintain.
+			</div>
+
+			<div class="card-text font-roboto-mono font-thin text-white">
+				Experience software development that prioritises your business goals and values, delivering reliable and scalable solutions that propel your growth in the competitive market.
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-blue pb-20 px-40 lg:px-20 flex flex-col items-center text-white text-center">
+		<div class="flex flex-col w-full lg:w-[400px]">
+			<h1 class="font-['Futura'] font-bold text-6xl lg:text-4xl my-28 lg:my-20">What can we help with?</h1>
+
+			<div class="">
+				<form id="contact-form">
+					<div class="field flex flex-col mb-8">
+						<input type="text" name="name" id="name" placeholder="Name">
+					</div>
+
+					<div class="field flex flex-col mb-8">
+						<input type="text" name="reply_to" id="reply_to" placeholder="Email">
+					</div>
+
+					<div>
+						<!-- Radio buttons for project type -->
+						<div class="field flex flex-col mb-8 items-start">
+							<div class="flex">
+								<input type="radio" name="project-type" id="web-app" value="app">
+								<label for="web-app">Mobile or web app</label>
+							</div>
+
+							<div class="flex">
+								<input type="radio" name="project-type" id="both" value="ai">
+								<label for="both">Ai project</label>
+							</div>
+
+							<div class="flex">
+								<input type="radio" name="project-type" id="mobile-app" value="upgrades">
+								<label for="mobile-app">New features and upgrades</label>
+							</div>
+
+							<div class="flex">
+								<input type="radio" name="project-type" id="both" value="capacity">
+								<label for="both">Add team apacity</label>
+							</div>
+
+							<div class="flex">
+								<input type="radio" name="project-type" id="other" value="other">
+								<label for="other">Other</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="field flex flex-col mb-8 text-left">
+						<label for="message">Want to tell us more?</label>
+						<input type="text" name="message" id="message">
+					</div>
+				
+					<input type="submit" id="button" value="SEND MESSAGE" >
+				</form>
 			</div>
 		</div>
 	</div>
