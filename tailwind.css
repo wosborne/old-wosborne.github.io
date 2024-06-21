@@ -150,6 +150,9 @@
     background-size: 1rem 1rem, 1rem 1rem, .5rem .5rem, .5rem .5rem;
     background-position: 0 0, .5rem .5rem, 0 0, 0 0;
   }
+  #arrow-down {
+    @apply text-8xl lg:text-6xl font-bold;
+  }
 }
 
 @layer components {
@@ -182,6 +185,9 @@
   }
   .card-text {
     @apply text-4xl lg:text-lg text-[#4B4B4B] font-roboto-slab font-normal;
+  }
+  #double-arrow {
+    @apply text-4xl;
   }
 }
 
@@ -259,7 +265,8 @@
     background-size: .7rem .7rem;
     @apply w-80 h-40 rounded-lg bg-green border-4 border-grey flex items-center justify-center;
   }
-  .bolt {
+  #bolt {
+    @apply text-8xl lg:text-6xl;
     font-variation-settings: "FILL" 1;
   }
 }
