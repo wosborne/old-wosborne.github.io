@@ -36,7 +36,7 @@
 				if (fieldsEmpty()) {
 					alert('Please fill in all fields');
 					return;
-				}	
+				}
 
 				// these IDs from the previous steps
 				emailjs.sendForm('contact_service', 'contact_form', this)
@@ -432,7 +432,7 @@
 			<h1 class="font-['Futura'] font-bold text-6xl lg:text-4xl my-28 lg:my-20">About us</h1>
 
 			<div class="card-text font-roboto-mono font-thin text-white">
-				We are dedicated to empowering small businesses with people-focused software solutions. Our mission is driven by clarity, quality, and a steadfast commitment to best practices. 
+				We are dedicated to empowering small businesses with people-focused software solutions. Our mission is driven by clarity, quality, and a steadfast commitment to best practices.
 			</div>
 
 			<div class="card-text font-roboto-mono font-thin text-white">
@@ -451,50 +451,52 @@
 
 			<div class="">
 				<form id="contact-form">
-					<div class="field flex flex-col mb-8">
-						<input type="text" name="name" id="name" placeholder="Name">
+					<div class="flex flex-col mb-8">
+						<input class="field" type="text" name="name" id="name" placeholder="Name">
 					</div>
 
-					<div class="field flex flex-col mb-8">
-						<input type="text" name="reply_to" id="reply_to" placeholder="Email">
+					<div class="flex flex-col mb-8">
+						<input class="field" type="text" name="reply_to" id="reply_to" placeholder="Email">
 					</div>
 
 					<div>
 						<!-- Radio buttons for project type -->
-						<div class="field flex flex-col mb-8 items-start">
-							<div class="flex">
-								<input type="radio" name="project-type" id="web-app" value="app">
-								<label for="web-app">Mobile or web app</label>
-							</div>
+						<div class="flex flex-col mb-8 items-start">
+							<label class="radio-container group">Mobile or web app
+								<input class="radio-input peer" type="radio" name="project_type" id="web-app" value="app">
+								<div class="radio-field peer-checked:bg-white group-hover:bg-orange"></div>
+							</label>
 
-							<div class="flex">
-								<input type="radio" name="project-type" id="both" value="ai">
-								<label for="both">Ai project</label>
-							</div>
+							<label class="radio-container group">Ai project
+								<input class="radio-input peer" type="radio" name="project_type" id="ai" value="ai">
+								<span class="radio-field peer-checked:bg-white group-hover:bg-orange"></span>
+							</label>
 
-							<div class="flex">
-								<input type="radio" name="project-type" id="mobile-app" value="upgrades">
-								<label for="mobile-app">New features and upgrades</label>
-							</div>
+							<label class="radio-container group">New features and upgrades
+								<input class="radio-input peer" type="radio" name="project_type" id="upgrades" value="upgrades">
+								<span class="radio-field peer-checked:bg-white group-hover:bg-orange"></span>
+							</label>
 
-							<div class="flex">
-								<input type="radio" name="project-type" id="both" value="capacity">
-								<label for="both">Add team apacity</label>
-							</div>
+							<label class="radio-container group">Add team capacity
+								<input class="radio-input peer" type="radio" name="project_type" id="capacity" value="capacity">
+								<span class="radio-field peer-checked:bg-white group-hover:bg-orange"></span>
+							</label>
 
-							<div class="flex">
-								<input type="radio" name="project-type" id="other" value="other">
-								<label for="other">Other</label>
-							</div>
+							<label class="radio-container group">Other
+								<input class="radio-input peer" type="radio" name="project_type" id="other" value="other">
+								<span class="radio-field peer-checked:bg-white group-hover:bg-orange"></span>
+							</label>
 						</div>
 					</div>
 
-					<div class="field flex flex-col mb-8 text-left">
-						<label for="message">Want to tell us more?</label>
-						<input type="text" name="message" id="message">
+					<div class="flex flex-col mb-12 text-left">
+						<label class="font-roboto-slab text-4xl lg:text-lg pb-4 lg:pb-2" for="message">Want to tell us more?</label>
+						<textarea class="field" rows="4" name="message" id="message"></textarea>
 					</div>
 				
-					<input type="submit" id="button" value="SEND MESSAGE" >
+					<button class="send-message" type="submit" id="submit">
+						Send message
+					</button>
 				</form>
 			</div>
 		</div>
