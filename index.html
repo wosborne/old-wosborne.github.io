@@ -13,55 +13,6 @@
 	<link rel="stylesheet" href="output.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-	</script>
-
-	<script type="text/javascript">
-		(function(){
-			emailjs.init({
-				publicKey: "ScSzGITo-Ws8Cakgz",
-			});
-		})();
-	</script>
-
-	<script type="text/javascript">
-		function fieldsEmpty() {
-			return document.getElementById('name').value === '' ||
-				document.getElementById('reply_to').value === '' ||
-				document.getElementById('message').value === '';
-		}
-
-		function clearForm() {
-			document.getElementById('name').value = '';
-			document.getElementById('reply_to').value = '';
-			document.getElementById('message').value = '';
-		}
-
-		window.onload = function() {
-			document.getElementById('contact-form').addEventListener('submit', function(event) {
-				event.preventDefault();
-
-				if (fieldsEmpty()) {
-					alert('Please fill in all fields');
-					return;
-				}
-
-				// these IDs from the previous steps
-				emailjs.sendForm('contact_service', 'contact_form', this)
-					.then(() => {
-						console.log('SUCCESS!');
-						
-						clearForm();
-
-						alert('Email sent successfully');
-					}, (error) => {
-						console.log('FAILED...', error);
-					});
-			});
-		}
-	</script>
-
-
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org/",
@@ -543,3 +494,51 @@
 		</div>
 	</div>
 </body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+	(function(){
+		emailjs.init({
+			publicKey: "ScSzGITo-Ws8Cakgz",
+		});
+	})();
+</script>
+
+<script type="text/javascript">
+	function fieldsEmpty() {
+		return document.getElementById('name').value === '' ||
+			document.getElementById('reply_to').value === '' ||
+			document.getElementById('message').value === '';
+	}
+
+	function clearForm() {
+		document.getElementById('name').value = '';
+		document.getElementById('reply_to').value = '';
+		document.getElementById('message').value = '';
+	}
+
+	window.onload = function() {
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+			event.preventDefault();
+
+			if (fieldsEmpty()) {
+				alert('Please fill in all fields');
+				return;
+			}
+
+			// these IDs from the previous steps
+			emailjs.sendForm('contact_service', 'contact_form', this)
+				.then(() => {
+					console.log('SUCCESS!');
+					
+					clearForm();
+
+					alert('Email sent successfully');
+				}, (error) => {
+					console.log('FAILED...', error);
+				});
+		});
+	}
+</script>
