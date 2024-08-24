@@ -149,7 +149,7 @@
 
 @layer components {
   .card {
-    @apply mb-20 w-full lg:w-[400px] relative;
+    @apply mb-32 w-full lg:w-[400px] relative;
   }
   .card-header {
     @apply border-b-2 border-b-grey flex gap-2 p-3;
