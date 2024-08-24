@@ -9,6 +9,7 @@ module.exports = {
       'roboto-mono': ['Roboto Mono', 'monospace'],
     },
     colors: {
+      'dark-grey': '#2A2A2A',
       grey: '#272727',
       'light-grey': '#4B4B4B',
       'lighter-grey': '#CECECE',
@@ -18,7 +19,10 @@ module.exports = {
       orange: '#D2654D',
       'pale-orange': '#FFEEEA',
       yellow: '#EDB241',
-      green: '#A1C457'
+      'pale-yellow': '#F8C07E',
+      green: '#A1C457',
+      red: '#F34542',
+      'pale-red': '#FAB5B3',
     },
     extend: {}
   },

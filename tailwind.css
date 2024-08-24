@@ -130,19 +130,20 @@
 
 @layer components {
   .hero {
-    @apply bg-orange;
-  }
-  .hero-shadow {
-    background-image: 
-      radial-gradient(#D2654D 10%, #272727 10%, #272727 17%, transparent 17%),
-      radial-gradient(#D2654D 10%, #272727 10%, #272727 17%, transparent 17%),
-      linear-gradient(transparent 20%, #D2654D 20%, #D2654D 80%, transparent 80%),
-      linear-gradient(90deg, #272727 7%, transparent 7%, transparent 94%, #272727 94%);
-    background-size: 1rem 1rem, 1rem 1rem, .5rem .5rem, .5rem .5rem;
-    background-position: 0 0, .5rem .5rem, 0 0, 0 0;
+    @apply bg-white;
   }
   #arrow-down {
     @apply text-6xl font-bold;
+  }
+  .check-background {
+    background-image: linear-gradient(transparent .23rem, #272727 .23rem, #272727 .3rem, transparent .3rem),
+      linear-gradient(90deg, transparent .23rem, #272727 .23rem, #272727 .3rem, transparent .3rem);
+    background-size: .35rem .35rem;
+  }
+  .hero-grid {
+    @apply grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(10, 38px);
   }
 }
 
@@ -152,8 +153,8 @@
   }
   .card-shadow {
     @apply h-full w-full absolute top-2 left-2 rounded-lg;
-    background-image: linear-gradient(#272727 .05rem, transparent .05rem),
-      linear-gradient(90deg, #272727 .05rem, transparent .05rem);
+    background-image: linear-gradient(transparent .025rem, #272727 .05rem, transparent .025rem),
+      linear-gradient(90deg, transparent .025rem, #272727 .05rem, transparent .025rem);
     background-size: .25rem .25rem;
   }
   .card-container {
