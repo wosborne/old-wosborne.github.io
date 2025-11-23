@@ -25,6 +25,7 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
 		>
+		<link rel="stylesheet" href="general.css">
 	</head>
 
 	<!-- Google tag (gtag.js) -->
@@ -38,6 +39,14 @@
 	</script>
 
 	<body>
+		<!-- Hidden templates -->
+		<template id="trigger-template">
+			<div class="trigger-container">
+				<div class="trigger-label"></div>
+				<div class="trigger-line"></div>
+			</div>
+		</template>
+		
 		<section class="hero is-fullheight">
 			<div class="hero-head">
 				<header class="navbar">
@@ -54,6 +63,16 @@
 				</header>
 			</div>
 
+			<div class="hero-body">
+				<div class="container is-flex is-flex-direction-column">
+					<h1 class="title is-size-display has-text-grey" data-color="danger">Fullstack</h1>
+					<h1 class="title is-size-display has-text-grey" data-color="info">Web & Native</h1>
+					<h1 class="title is-size-display has-text-grey" data-color="warning">Development</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="hero is-fullheight">
 			<div class="hero-body">
 				<div class="container">
 					<div class="container has-text-centered is-max-tablet mb-6">
@@ -104,5 +123,15 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="section">
+			<footer class="container">
+				<div class="container has-text-centered">
+					<small><a href="mailto:hello@notallonesandzeros.com">hello@notallonesandzeros.com</a> | <a href="https://rubyrailed.com">Blog</a></small>
+				</div>
+			</header>
+		</section>
+		
+		<script src="code-explorer.js"></script>
 	</body>
 </html>
