@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const selectors = [
-		{ selector: '.is-size-display', label: '<h1 class="title is-size-display">' }
+		{ selector: '.title-target', label: '<h1 class="title">' }
 	];
 	
 	const labelPairs = [];
@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				
 				el.classList.add('code-labeled-element');
 				
-				// Special handling for h1 titles with color data
-				if (el.tagName === 'H1' && el.classList.contains('title') && el.dataset.color) {
+				// Special handling for title-target elements with color data
+				if (el.classList.contains('title-target') && el.dataset.color) {
 					const colorClass = `has-text-${el.dataset.color}`;
 					
 					el.addEventListener('mouseenter', () => {
@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!triggerLine || !triggerLabel) return;
 		
 		const triggerRect = triggerLine.getBoundingClientRect();
-		const triggerY = triggerRect.top;
+		const triggerY = triggerRect.top;xx
 		let intersectingElement = null;
 		
-		document.querySelectorAll('.is-size-display').forEach(h1 => {
+		document.querySelectorAll('.title-target').forEach(h1 => {
 			if (h1.dataset.color) {
 				const h1Rect = h1.getBoundingClientRect();
 				const isIntersecting = triggerY >= h1Rect.top && triggerY <= h1Rect.bottom;
