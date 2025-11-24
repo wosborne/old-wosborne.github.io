@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!triggerLine || !triggerLabel) return;
 		
 		const triggerRect = triggerLine.getBoundingClientRect();
-		const triggerY = triggerRect.top;xx
+		const triggerY = triggerRect.top;
 		let intersectingElement = null;
 		
 		document.querySelectorAll('.title-target').forEach(h1 => {
@@ -107,9 +107,34 @@ document.addEventListener('DOMContentLoaded', () => {
 		checkTriggerIntersection();
 	});
 	
+	// Circle animation on scroll
+	function animateCircleOnScroll() {
+		const container = document.querySelector('.circle-container');
+		const label = document.querySelector('.measurement-label');
+		if (!container) return;
+		
+		const scrollPercent = window.scrollY / window.innerHeight;
+		const scale = Math.max(0.1, 1 - scrollPercent);
+		
+		// Scale the entire container (including border)
+		const currentSize = 10 * scale;
+		const sizeDiff = (10 - currentSize) / 2; // Half the difference to center
+		
+		container.style.width = `${currentSize}rem`;
+		container.style.height = `${currentSize}rem`;
+		container.style.top = `${3 + sizeDiff}rem`; // Adjust top position
+		container.style.right = `${1 + sizeDiff}rem`; // Adjust right position
+		
+		// Update measurement label
+		if (label) {
+			label.textContent = `${currentSize.toFixed(1)}rem`;
+		}
+	}
+
 	window.addEventListener('scroll', () => {
 		updateLabels();
 		checkTriggerIntersection();
+		animateCircleOnScroll();
 	});
 	
 	checkTriggerIntersection();

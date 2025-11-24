@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Epoch';
+  src: url('https://befonts.com/downfile/8f81af6c82c278bd73b30aff30e50bb8.956031') format('truetype');
+  font-display: swap;
+}
+
+body, html {
+  font-family: 'Epoch', sans-serif;
+}
+
 .is-size-display {
   font-size: clamp(3rem, 8vw, 9rem);
   font-weight: bold;
@@ -25,7 +35,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 25vh;
+  top: 50vh;
   left: 0;
   width: 100vw;
   z-index: 999;
@@ -34,17 +44,12 @@
 
 .trigger-line {
   height: 1px;
-  background: rgba(128, 128, 128, 0.5);
+  background: transparent;
   width: 100%;
 }
 
 .trigger-label {
-  background: rgba(255, 255, 255, 0.8);
-  color: #282828;
-  font-family: monospace;
-  font-size: 11px;
-  padding: 2px 6px;
-  white-space: nowrap;
+  display: none;
 }
 
 .title-target {
@@ -53,4 +58,48 @@
 
 .title-target:last-child {
   margin: 0;
+}
+
+.circle-container {
+  position: fixed;
+  top: 3rem;
+  right: 1rem;
+  width: 10rem;
+  height: 10rem;
+  transition: all 0.05s;
+  z-index: 1000;
+}
+
+.circle-container::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.3);
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.circle-measurement {
+  position: absolute;
+  right: calc(100% + 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.measurement-label {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: rgba(128, 128, 128, 0.6);
+  white-space: nowrap;
 }
