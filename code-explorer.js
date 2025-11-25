@@ -89,6 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
 					entry.target.classList.remove(colorClass);
 					entry.target.classList.add('has-text-grey');
 				}
+				
+				// Update debug labels when class changes
+				const labelPair = labelPairs.find(pair => pair.element === entry.target);
+				if (labelPair) {
+					const classList = Array.from(entry.target.classList).filter(cls => cls !== 'code-labeled-element').join(' ');
+					labelPair.label.textContent = `class="${classList}" ${entry.target.offsetWidth}x${entry.target.offsetHeight}px`;
+				}
 			});
 			
 			// Update trigger label

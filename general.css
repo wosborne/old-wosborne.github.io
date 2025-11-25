@@ -9,7 +9,7 @@ body, html {
 }
 
 .is-size-display {
-  font-size: clamp(3rem, 8vw, 9rem);
+  font-size: clamp(3.2rem, 8vw, 9rem);
   font-weight: bold;
 }
 
