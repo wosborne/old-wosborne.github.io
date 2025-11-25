@@ -21,10 +21,13 @@
 		<meta name="twitter:url" content="https://notallonesandzeros.com/images/logo@2x.png.png">
 		<meta name="twitter:card" content="summary">
 
+		<script src="https://kit.fontawesome.com/6fb2a00b93.js" crossorigin="anonymous"></script>
+
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
 		>
+		<link rel="stylesheet" href="general.css">
 	</head>
 
 	<!-- Google tag (gtag.js) -->
@@ -38,57 +41,146 @@
 	</script>
 
 	<body>
+		<!-- Hidden templates -->
+		<template id="trigger-template">
+			<div class="trigger-container">
+				<div class="trigger-label"></div>
+				<div class="trigger-line"></div>
+			</div>
+		</template>
+		
+		
 		<section class="hero is-fullheight">
 			<div class="hero-head">
 				<header class="navbar">
-					<div class="container">
-						<div class="navbar-brand">
-							<a class="navbar-item" href="">
-								<img src="images/logo@2x.png" alt="Logo" />
-							</a>
-							<div class="navbar-item" style="gap: 0;">
-								<span><span class="has-text-weight-bold">NotAllOnesAndZeros </span>is my solo <span class="has-text-weight-bold">Software Agency</span></span>
+					<div class="navbar-brand">
+						<a class="navbar-item pr-0" href="">
+							<span class="has-text-weight-bold">Not All Ones and Zeros</span>
+						</a>
+					</div>
+
+					<div class="navbar-menu">
+						<div class="navbar-start">
+							<div class="navbar-item pl-0" style="gap: 0;">
+								<span>, my solo <span class="has-text-weight-medium">Software Agency</span></span>
 							</div>
+						</div>
+
+						<div class="navbar-end">
+							<a class="navbar-item" href="rubyrailed.com" target="_blank">Blog</a>
 						</div>
 					</div>
 				</header>
 			</div>
 
+			<div class="hero-body is-align-items-flex-end">
+				<h1 class="title is-size-display has-text-grey mb-0">
+					<div class="title-target" data-color="danger">Fullstack</div>
+					<div class="title-target" data-color="info">Native & Web</div>
+					<div class="title-target" data-color="warning">Development</div>
+				</h1>
+			</div>
+		</section>
+
+		<section class="hero is-fullheight is-large-tablet is-warning">
 			<div class="hero-body">
-				<div class="container">
-					<div class="container has-text-centered is-max-tablet mb-6">
-						<h2 class="title is-size-1 has-text-weight-bold">Ambitious vision, lean budget?<br/>
-						<span class="has-background-success-light has-text-dark">There's a way.</span></h2>
+				<div class="container is-max-tablet has-text-centered">
+					<div class="icon is-large">
+						<i class="fa-solid fa-lightbulb fa-2x"></i>
 					</div>
-					<article class="columns">
-						<div class="column fixed-grid has-1-cols">
-							<div class="is-size-4 grid has-text-left">
-								<p class="cell">When starting a new software project, there are two common paths: <span class="has-text-weight-bold">hiring a development team</span> or <span class="has-text-weight-bold"> contracting an agency</span>.</p>
-								<p class="cell">Hiring is tough—especially when you're not a technical expert. What skills should you look for? How much experience is enough? And how do you know if you're paying the right amount?</p>
-								<p class="cell">Agencies make hiring easier by bringing in experience and structure. But what they offer in expertise, they often lack in <span class="has-text-weight-bold">flexibility, personal attention</span>, and they typically come with a <span class="has-text-weight-bold">much higher price tag</span>.</p>
-							</div>
-						</div>
-						<div class="column fixed-grid has-1-cols">
-							<div class="is-size-4 grid has-text-left">
-								<p class="cell">That’s where a <span class="has-text-weight-bold">solo developer</span> can be the perfect fit.</p>
-								<p class="cell">I bring the same level of experience you'd find at a top agency—but with a more personal, collaborative approach. I don’t carry the overhead of a large team, which means I can keep costs down and help you move faster from idea to launch.</p>
-								<p class="cell">And the goal isn’t for you to rely on me forever—that’s a good thing. I want to help you build something strong enough to grow well beyond what one developer can provide.</p>
-								<p class="cell"><span class="has-text-weight-bold">All great ideas start with a quick chat. <a class="is-underlined" href="#contact">Let’s talk.</a></span></p>
-							</div>
-						</div>
-					</article>
+					<h2 class="title is-size-2">
+						Start a new idea?
+					</h2>
+
+					<p class="is-size-4">
+						You've had a lightbulb moment? Got a vision for a new product or service? Don't know where to start?
+						I love helping founders launch new software products. From idea to prototype to market!
+					</p>
 				</div>
 			</div>
 		</section>
 
-		<section class="hero is-fullheight">
+		<section class="hero is-fullheight is-large-tablet is-success">
+			<div class="hero-body">
+				<div class="container is-max-tablet has-text-centered">
+					<div class="icon is-large">
+						<i class="fa-brands fa-fort-awesome fa-2x"></i>
+					</div>
+					<h2 class="title is-size-2">
+						Continue your legacy...
+					</h2>
+
+					<p class="is-size-4">
+						Your existing software is already solving problems for your business and your customers.
+						But now you need new features, upgrades or extra capacity to join the kickass team.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="hero is-fullheight is-large-tablet is-info">
+			<div class="hero-body">
+				<div class="container is-max-tablet has-text-centered">
+					<div class="icon is-large">
+						<i class="fa-solid fa-magic-wand-sparkles fa-2x"></i>
+					</div>
+					<h2 class="title is-size-2">
+						Un-f**k your AI slop!
+					</h2>
+
+					<p class="is-size-4">
+						AI is great, we're all using it. It can help you take an idea to a prototype in minutes and sometimes this is good enough.
+						But for most serious applications we want reliability, security, scalability, maintainabilty and flexibility.
+						Your idea is not slop but your software might be.
+					</p>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="hero is-medium">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+					<h2 class="title is-size-2">Not all <span id="binary-flicker" class="is-family-monospace">ones and zeros</span></h2>
+					<div class="columns has-1-col has-2-cols-desktop">
+						<div class="column is-size-4 has-text-right-tablet">
+							People over process.
+							<br class="is-hidden-mobile"/>Building software that proritises
+							<br class="is-hidden-mobile"/>the people that use it.
+						</div>
+						<div class="column is-size-4 has-text-left-tablet has-background-dark has-text-white is-family-monospace">
+							Desktop, Native or Web your
+							<br class="is-hidden-mobile"/> application will reach your
+							<br class="is-hidden-mobile"/> users however they want it
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="hero is-medium">
+			<div class="hero-body">
+				<div class="container is-max-tablet has-text-centered">
+					<h2 class="title is-size-2">
+						Work how you work best
+					</h2>
+					
+					<p class="is-size-4">
+						On-site, hybrid or remotley. I'm based in London but flexible worldwide. Some clients prefer face-to-face collaboration, 
+						others work better remotely. I adapt to what works best for your team and project.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="hero is-link">
 			<div class="hero-body">
 				<div class="container">
 					<div class="columns">
 						<div class="column">
 							<h2 class="title is-size-1 has-text-weight-bold">Current Project</h2>
-							<p class="is-size-4">I am working with the team at <a href="https://www.calatech.co.uk/">Calatech</a> to make e-commerce across multiple marketplaces and B2B	trading straightforward.
-								We are in <span class="has-text-weight-bold">beta</span> and looking for early adopters, if you sell e-commerce products and want to help shape the platform to your needs, please <a href="#contact">get in touch</a>.
+							<p class="is-size-4">I am working with the team at <a class="has-text-primary" href="https://www.calatech.co.uk/">Calatech</a> to make e-commerce across multiple marketplaces and B2B	trading straightforward.
+								We are in <span class="has-text-weight-bold">beta</span> and looking for early adopters, if you sell e-commerce products and want to help shape the platform to your needs, please <a class="has-text-primary" href="#contact">get in touch</a>.
 							</p>
 						</div>
 					</div>
@@ -96,13 +188,39 @@
 			</div>
 		</section>
 
-		<section class="hero is-fullheight">
+		<section class="hero is-medium" id="contact">
 			<div class="hero-body">
-				<div class="container">
-					<h2 class="title is-size-1 has-text-weight-bold has-text-centered" id="contact">Contact me</h2>
-					<script data-letterbirduser="not-all-ones-and-zeros" src="https://letterbird.co/embed/v1.js"></script>
+				<div class="container is-max-tablet has-text-centered">
+					<h2 class="title is-size-2">
+						Contact Me
+					</h2>
+					
+					<div class="buttons is-centered is-large">
+						<a href="mailto:hello@notallonesandzeros.com" class="button is-primary is-outlined">
+							<span class="icon">
+								<i class="fa-solid fa-envelope"></i>
+							</span>
+							<span>Email</span>
+						</a>
+						<a href="https://www.linkedin.com/in/william-osborne-dev/" class="button is-primary is-outlined" target="_blank">
+							<span class="icon">
+								<i class="fa-brands fa-linkedin"></i>
+							</span>
+							<span>LinkedIn</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
+
+		<section class="section">
+			<footer class="container">
+				<div class="container has-text-centered">
+					<small><a href="mailto:hello@notallonesandzeros.com">hello@notallonesandzeros.com</a> | <a href="https://rubyrailed.com">Blog</a></small>
+				</div>
+			</footer>
+		</section>
+		
+		<script src="code-explorer.js"></script>
 	</body>
 </html>

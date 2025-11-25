@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'Epoch';
+  src: url('https://befonts.com/downfile/8f81af6c82c278bd73b30aff30e50bb8.956031') format('truetype');
+  font-display: swap;
+}
+
+body, html {
+  font-family: 'Epoch', sans-serif;
+}
+
+.is-size-display {
+  font-size: clamp(3.2rem, 8vw, 9rem);
+  font-weight: bold;
+}
+
+.code-label {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  background: rgba(128, 128, 128, 0.1);
+  color: #666;
+  font-family: monospace;
+    font-size: clamp(0.1rem, 2vw, .8rem);
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.code-labeled-element {
+  outline: 1px dashed rgba(128, 128, 128, 0.3);
+}
+
+.trigger-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50vh;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.trigger-line {
+  height: 1px;
+  background: transparent;
+  width: 100%;
+}
+
+.trigger-label {
+  display: none;
+}
+
+.title-target {
+  margin-bottom: 1rem;
+}
+
+.title-target:last-child {
+  margin: 0;
+}
+
