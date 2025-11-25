@@ -20,20 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (el.classList.contains('title-target') && el.dataset.color) {
 					const colorClass = `has-text-${el.dataset.color}`;
 					
+					// Function to update dimensions only when needed
+					const updateDimensions = () => {
+						const classList = Array.from(el.classList).filter(cls => cls !== 'code-labeled-element').join(' ');
+						labelEl.textContent = `class="${classList}" ${el.offsetWidth}x${el.offsetHeight}px`;
+					};
+					
+					// Use ResizeObserver to update dimensions only when element resizes
+					const resizeObserver = new ResizeObserver(updateDimensions);
+					resizeObserver.observe(el);
+					updateDimensions(); // Initial update
+					
+					// Simple color changes on hover without dimension calculations
 					el.addEventListener('mouseenter', () => {
 						el.classList.remove('has-text-grey');
 						el.classList.add(colorClass);
-						const rect = el.getBoundingClientRect();
-						const classList = Array.from(el.classList).filter(cls => cls !== 'code-labeled-element').join(' ');
-						labelEl.textContent = `class="${classList}" ${Math.round(rect.width)}x${Math.round(rect.height)}px`;
 					});
 					
 					el.addEventListener('mouseleave', () => {
 						el.classList.remove(colorClass);
 						el.classList.add('has-text-grey');
-						const rect = el.getBoundingClientRect();
-						const classList = Array.from(el.classList).filter(cls => cls !== 'code-labeled-element').join(' ');
-						labelEl.textContent = `class="${classList}" ${Math.round(rect.width)}x${Math.round(rect.height)}px`;
 					});
 				}
 				
@@ -66,76 +72,85 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.body.appendChild(triggerContainer);
 	}
 	
-	function checkTriggerIntersection() {
-		if (!triggerLine || !triggerLabel) return;
+	function setupIntersectionObserver() {
+		if (!triggerLabel) return;
 		
-		const triggerRect = triggerLine.getBoundingClientRect();
-		const triggerY = triggerRect.top;
-		let intersectingElement = null;
-		
-		document.querySelectorAll('.title-target').forEach(h1 => {
-			if (h1.dataset.color) {
-				const h1Rect = h1.getBoundingClientRect();
-				const isIntersecting = triggerY >= h1Rect.top && triggerY <= h1Rect.bottom;
-				const colorClass = `has-text-${h1.dataset.color}`;
+		const observer = new IntersectionObserver((entries) => {
+			let intersectingElement = null;
+			
+			entries.forEach(entry => {
+				const colorClass = `has-text-${entry.target.dataset.color}`;
 				
-				if (isIntersecting) {
-					h1.classList.remove('has-text-grey');
-					h1.classList.add(colorClass);
-					intersectingElement = h1;
+				if (entry.isIntersecting) {
+					entry.target.classList.remove('has-text-grey');
+					entry.target.classList.add(colorClass);
+					intersectingElement = entry.target;
 				} else {
-					h1.classList.remove(colorClass);
-					h1.classList.add('has-text-grey');
+					entry.target.classList.remove(colorClass);
+					entry.target.classList.add('has-text-grey');
 				}
+			});
+			
+			// Update trigger label
+			if (intersectingElement) {
+				triggerLabel.textContent = `intersecting: <h1>${intersectingElement.textContent}</h1>`;
+			} else {
+				triggerLabel.textContent = '...';
 			}
+		}, {
+			rootMargin: '-50% 0px -50% 0px'
 		});
 		
-		// Update trigger label
-		if (intersectingElement) {
-			triggerLabel.textContent = `intersecting: <h1>${intersectingElement.textContent}</h1>`;
-		} else {
-			triggerLabel.textContent = '...';
-		}
+		// Observe all title elements with color data
+		document.querySelectorAll('.title-target').forEach(el => {
+			if (el.dataset.color) {
+				observer.observe(el);
+			}
+		});
 	}
 	
 	createLabels();
 	updateLabels();
 	createTriggerLine();
+	setupIntersectionObserver();
 	
-	window.addEventListener('resize', () => {
-		updateLabels();
-		checkTriggerIntersection();
-	});
-	
-	// Circle animation on scroll
-	function animateCircleOnScroll() {
-		const container = document.querySelector('.circle-container');
-		const label = document.querySelector('.measurement-label');
-		if (!container) return;
+	// Binary flicker animation
+	function createBinaryFlicker() {
+		const binarySpan = document.getElementById('binary-flicker');
+		if (!binarySpan) return;
 		
-		const scrollPercent = window.scrollY / window.innerHeight;
-		const scale = Math.max(0.1, 1 - scrollPercent);
+		const generateBinary = () => Math.random() > 0.5 ? '1' : '0';
 		
-		// Scale the entire container (including border)
-		const currentSize = 10 * scale;
-		const sizeDiff = (10 - currentSize) / 2; // Half the difference to center
-		
-		container.style.width = `${currentSize}rem`;
-		container.style.height = `${currentSize}rem`;
-		container.style.top = `${3 + sizeDiff}rem`; // Adjust top position
-		container.style.right = `${1 + sizeDiff}rem`; // Adjust right position
-		
-		// Update measurement label
-		if (label) {
-			label.textContent = `${currentSize.toFixed(1)}rem`;
+		function flicker() {
+			let newBinary = '';
+			for (let i = 0; i < 5; i++) {
+				newBinary += generateBinary();
+			}
+			binarySpan.textContent = newBinary;
 		}
+		
+		// Flicker every 100-500ms with random intervals
+		function scheduleNextFlicker() {
+			const delay = Math.random() * 400 + 100; // 100-500ms
+			setTimeout(() => {
+				flicker();
+				scheduleNextFlicker();
+			}, delay);
+		}
+		
+		scheduleNextFlicker();
 	}
-
-	window.addEventListener('scroll', () => {
-		updateLabels();
-		checkTriggerIntersection();
-		animateCircleOnScroll();
-	});
 	
-	checkTriggerIntersection();
+	createBinaryFlicker();
+	
+	// Use ResizeObserver for more efficient label updates
+	if (labelPairs.length > 0) {
+		const resizeObserver = new ResizeObserver(() => {
+			updateLabels();
+		});
+		
+		// Observe each labeled element and the window
+		labelPairs.forEach(({ element }) => resizeObserver.observe(element));
+		resizeObserver.observe(document.body);
+	}
 });
